@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <h1><%= @owner.full_name %></h1>
+
+  <p style="color:red"><%= flash[:message] if flash[:message] %></p>
+
+  <div>Age: <%= @owner.age %></div>
+  <div>Email: <%= @owner.email %></div>
+
+  <div class="names-list">
+    <h3>Pets</h3>
+    <% @owner.pets.each do |pet| %>
+      <span><%= link_to pet.name, pet %></span>
+    <% end %>
+  </div>
+
+  <span class="button first"><%= button_to "Edit Owner", edit_owner_path(@owner), method: :get %></span>
+  <span class="button"><%= button_to "Delete Owner", @owner, method: :delete %></span>
+</div>

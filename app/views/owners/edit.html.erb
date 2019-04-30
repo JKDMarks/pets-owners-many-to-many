@@ -1,0 +1,7 @@
+<div class="jumbotron">
+  <h1>Edit <%= @owner.full_name %></h1>
+
+  <p style="color:red"><%= flash[:message] if flash[:message] %></p>
+
+  <%= render "owners/owner_form_for" %>
+</div>

@@ -10,6 +10,40 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Owners & Pets", home_path, id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <%= link_to "Owners", '#' %>
+              <div class="dropdown-content">
+                <p><%= link_to "All Owners", owners_path %></p>
+                <p><%= link_to "Petless", petless_owners_path %></p>
+              </div>
+            </li>
+            <li class="dropdown dropdown-menu-right">
+              <%= link_to "Pets", "#" %>
+              <div class="dropdown-content">
+                <p><%= link_to "All Pets", pets_path %></p>
+                <p><%= link_to "Ownerless", ownerless_pets_path %></p>
+              </div>
+            </li>
+            <!-- <li><%#= link_to "Log in", '#' %></li> -->
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+      <%= render "layouts/footer" %>
+    </div>
   </body>
 </html>
+
+<!-- <div class="dropdown">
+  <span>Mouse over me</span>
+  <div class="dropdown-content">
+    <p>Hello World!</p>
+  </div>
+</div> -->

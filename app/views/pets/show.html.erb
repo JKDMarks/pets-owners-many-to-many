@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <h1><%= @pet.name %></h1>
+
+  <p style="color:red"><%= flash[:message] if flash[:message] %></p>
+
+  <div>Species: <%= @pet.species %></div>
+
+  <div class="names-list">
+    <h3>Owners</h3>
+    <% @pet.owners.each do |owner| %>
+      <span><%= link_to owner.full_name, owner %></span>
+    <% end %>
+  </div>
+
+  <span class="button first"><%= button_to "Edit Pet", edit_pet_path(@pet), method: :get %></span>
+  <span class="button"><%= button_to "Delete Pet", @pet, method: :delete %></span>
+</div>

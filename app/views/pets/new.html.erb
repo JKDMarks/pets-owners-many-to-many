@@ -1,0 +1,7 @@
+<div class="jumbotron">
+  <h1>New Pet</h1>
+
+  <p style="color:red"><%= flash[:message] if flash[:message] %></p>
+
+  <%= render "pets/pet_form_for" %>
+</div>

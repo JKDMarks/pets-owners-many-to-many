@@ -1,0 +1,9 @@
+<div class="center jumbotron">
+  <h1>Ownerless Pets</h1>
+
+  <div class="names-list">
+    <% @ownerless_pets.each do |pet| %>
+      <span><%= link_to pet.name, pet %></span>
+    <% end %>
+  </div>
+</div>

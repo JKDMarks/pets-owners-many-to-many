@@ -1,0 +1,15 @@
+<%= form_for @pet do |f| %>
+  <p><%= f.label :name %>
+  <%= f.text_field :name %></p>
+
+  <p><%= f.label :species %>
+  <%#= f.text_field :species %>
+  <%= f.select(:species, ["dog", "cat", "bird"]) %></p>
+
+  <p><%= f.label :owners %>
+  <blockquote><%= f.collection_check_boxes(:owner_ids, Owner.all, :id, :full_name) do |owner| %>
+    <br><%= owner.label {owner.check_box + owner.text} %>
+  <% end %></blockquote></p>
+
+  <p><%= f.submit %></p>
+<% end %>

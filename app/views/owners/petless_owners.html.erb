@@ -1,0 +1,9 @@
+<div class="center jumbotron">
+  <h1>Petless Owners</h1>
+
+  <div class="names-list">
+    <% @petless_owners.each do |owner| %>
+      <span><%= link_to owner.full_name, owner %></span>
+    <% end %>
+  </div>
+</div>

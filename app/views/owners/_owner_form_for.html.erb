@@ -1,0 +1,20 @@
+<%= form_for @owner do |f| %>
+  <p><%= f.label :first_name %>
+  <%= f.text_field :first_name %></p>
+
+  <p><%= f.label :last_name %>
+  <%= f.text_field :last_name %></p>
+
+  <p><%= f.label :age %>
+  <%= f.number_field :age %></p>
+
+  <p><%= f.label :email %>
+  <%= f.text_field :email %></p>
+
+  <p><%= f.label :pets %>
+  <blockquote><%= f.collection_check_boxes(:pet_ids, Pet.all, :id, :name) do |pet| %>
+    <br><%= pet.label {pet.check_box + pet.text} %>
+  <% end %></blockquote></p>
+
+  <p><%= f.submit %></p>
+<% end %>

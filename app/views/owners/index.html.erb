@@ -1,0 +1,11 @@
+<div class="center jumbotron">
+  <h1>Owners Index</h1>
+
+  <div class="names-list">
+    <% @owners.each do |owner| %>
+      <span><%= link_to owner.full_name, owner %></span>
+    <% end %>
+  </div>
+
+  <p><%= button_to "New Owner", new_owner_path, method: :get %></p>
+</div>

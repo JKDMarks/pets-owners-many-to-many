@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/', to: 'owners#home', as: 'home'
+  get 'owners/petless_owners', to: 'owners#petless_owners', as: 'petless_owners'
+  get 'pets/ownerless_pets', to: 'pets#ownerless_pets', as: 'ownerless_pets'
+  resources :pets
+  resources :owners
 end
